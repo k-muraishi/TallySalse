@@ -1,10 +1,12 @@
-#!/bin/bash
+#!/bin/sh
+## runnning sample
+#jar -cvf TallySales.jar target/classes/*
 
-# メインクラス名を指定します
-MAIN_CLASS="jp.co.local.TallySales"
+BASEDIR=`dirname $0`
+echo $BASEDIR
 
-# TallySales.jarファイルのパス
-JAR_FILE="./TallySales.jar"
+jars="TallySales.jar:$BASEDIR/*:$BASEDIR/lib/*"
+mainclass='jp.co.local.TallySales'
 
-# JavaコマンドでTallySales.jarの中のメインクラスを実行します
-java -cp "$JAR_FILE" "$MAIN_CLASS"sh
+#echo java -Xmx1024m -cp="$jars" "$mainclass" $*
+java -Xmx1024m -cp "$jars" "$mainclass"
