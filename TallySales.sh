@@ -1,6 +1,6 @@
 #!/bin/sh
 ## runnning sample
-#jar -cvf TallySales.jar target/classes/*
+#jar -cvf TallySales.jar -C target/classes .
 
 BASEDIR=`dirname $0`
 echo $BASEDIR
